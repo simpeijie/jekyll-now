@@ -7,7 +7,7 @@ This project uses techniques of reinforcement learning, specifically value itera
 
 <!-- ![pacman_gridworld]({{ site.baseurl }}/images/pacman_gridworld.png) -->
 
-# Value Iteration
+## Value Iteration
 
 The first agent we are concerned with is the value iteration agent - an offline planner. The agent takes a Markov Decision Process on construction and runs value iteration for a desired number of iterations. Value iteration computes k-step estimates of the optimal values, V<sub>k</sub>. 
 
@@ -17,10 +17,10 @@ python gridworld.py -a value -i 5
 ```
 
 Upon running the command, the output looks like:
-![value-iteration]({{ site.baseurl}}/images/value-iteration)
+![value-iteration]({{ site.baseurl}}/images/value-iteration.png)
 
-The agent then selects the best action for a particular state according to the values and computes the Q-value of each (state, action) pair.
+The agent then selects the best action for a particular state according to the values and computes the Q-value of each (state, action) pair. 
 
-![q-values]({{ site.baseurl}}/images/q-values)
+![q-values]({{ site.baseurl}}/images/q-values.png)
 
 
