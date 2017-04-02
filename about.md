@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I am currently senior majoring in Electrical Engineering and Computer Science at the University of California, Berkeley. 
 
 ### More Information
 
@@ -12,4 +12,4 @@ A place to include any other types of information that you'd like to include abo
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[peijiesim@berkeley.edu](mailto:email@domain.com)
