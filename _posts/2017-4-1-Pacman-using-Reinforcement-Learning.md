@@ -17,10 +17,10 @@ python gridworld.py -a value -i 5
 ```
 
 Upon running the command, the output looks like:
-![value-iteration]({{ site.baseurl}}/images/value-iteration.png)
+![value-iteration]({{ site.baseurl }}/images/value-iteration.png | width=48)
 
 The agent then selects the best action for a particular state according to the values and computes the Q-value of each (state, action) pair. 
 
-![q-values]({{ site.baseurl}}/images/q-values.png)
+![q-values]({{ site.baseurl}}/images/q-values.png | width=48)
 
 
