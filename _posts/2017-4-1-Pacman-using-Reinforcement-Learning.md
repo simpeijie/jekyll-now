@@ -60,7 +60,7 @@ Convergence is defined such that $\forall s \in S, V_k(s) = V_{k+1}(s) = V^*(s)$
 
 ### Temporal Difference Learning 
 
-In contrast to offline planning, online planning does not have prior knowledge of the transition function and reward function. The agent must try exploration, during which it performs actions and receives feedback in the form of the successor states it arrives in and the corresponding rewards it reaps.
+In contrast to offline planning, online planning does not have prior knowledge of the transition function and reward function. The agent must try exploration, during which it performs actions and receives feedback in the form of the successor states it arrives in and the corresponding rewards it reaps. In the real world, temporal difference learning and Q-learning are more useful since an MDP will not always be available. 
 
 Before delving into Q-learning, we first have to understand temporal difference learning. Temporal difference learning keeps track of an exponential moving average of the value at each state and at each timestep, it obtains a sample value of taking an action $\pi(s)$ from state $s$ and ending up in $s'$. The sample value is calculated as such:
 
@@ -70,9 +70,9 @@ Then, we incorporate the sample (new estimate for $V^\pi(s)$) into the existing 
 
 $$V^\pi(s) = (1 - \alpha)V^\pi(s) + \alpha \cdot sample$$
 
-where $alpha$ is the learning rate that specifies the weight to assign the existing mdoel and the weight to assign the new sampled estimate. 
+where $\alpha$ is the learning rate that specifies the weight to assign the existing mdoel and the weight to assign the new sampled estimate. 
 
-## Q-Learning
+### Q-Learning
 
 TD learning does not enable us to find the optimal policy for our agent, which requires knowledge of the q-values of states. Unlike TD learning, Q-learning learns the q-values of states directly, bypassing the need to know any values, transition functions, or reward functions. The update rule for Q-learning is as follows:
 
@@ -95,24 +95,55 @@ To display the GUI, run
 python gridworld.py -a value -i 5
 ```
 
+where the option `-i` specifies the number of timesteps/iterations to run.
+
 <img src="{{ site.baseurl }}/images/value-iteration.png" width="300" class="center-image">
 
-The agent then selects the best action for a particular state according to the values and computes the Q-value of each (state, action) pair. 
+The agent then selects the best action for a particular state according to the values and computes the q-value of each (state, action) pair. 
 
 <img src="{{ site.baseurl }}/images/q-values.png" width="300" class="center-image">
 
-# Q-Learning
+Here, each quarter of a square represents the q-value of taking an action $a$ that is either North, South, East or West from the current state $s$.
 
-The value iteration agent does not learn from experience. It attempts to construct an MDP model to arrive at a complete policy before interacting with a real environment. When it interacts with the environment, it simply follows the precomputed policy. However, in the real world, the MDP is not available. 
+With Q-learning update in place, we can watch the agent learn under manual control, using the keyboard:
 
-Therefore, a Q-learning agent, which does very little on construction, but instead learns by trial and error from interatctions with the environment is more appropriate for this setting.
-
-Here's a demo of the agent learning for 5 episodes. 
-<img src="{{ site.baseurl }}/images/q-learning.gif" width="300" class="center-image">
-
-To watch the Q-learner learn under manual control, run  
-``` 
+```
 python gridworld.py -a q -k 5 -m
 ```
+<img src="{{ site.baseurl }}/images/q-learning.gif" width="300" class="center-image">
 
-The Q-learning agent is complete with the implementation of epsilon-greedy action selection, meaning it chooses random actions an epsilon fraction of the time, and follows its current best Q-values otherwise. It works on 
+The Q-learning agent is complete with the implementation of epsilon-greedy action selection, meaning it chooses random actions an epsilon fraction of the time, and follows its current best q-values otherwise. Choosing a random action may result in choosing the best action. Hence, the agent will choose any random legal action rather than a random sub-optimal action. 
+
+The epsilon-greedy action selection is coded generically so that it works on gridworld as well as on the Q-learning crawler robot. To see the robot in action, we run:
+
+```
+python crawler.py
+```
+<iframe width="540" height="315" class="center-image" src="http://www.youtube.com/embed/SROJrjSZg0Q" frameborder="0" allowfullscreen></iframe>
+
+The crawler starts off undecisive and wobbly but as it moves, it learns the best actions to progress after which it moves quicker and more steadily. The same applies to Pacman, who in the beginning of the game, perishes but later wins the game consistently. 
+
+There are two phases in which Pacman will play this game. The first is training, where Pacman will begin to learn about the values of positions and actions. Once training is complete, he will enter testing mode during which he will play the game for a certain number of rounds and how well he does is measured by his win rate. To see Pacman in action after 2000 games of training, run:
+
+```
+python pacman.py -p PacmanQAgent -x 2000 -n 2010 -l smallGrid 
+``` 
+
+<iframe width="540" height="315" class="center-image" src="http://www.youtube.com/embed/zmx-SJnsiQM" frameborder="0" allowfullscreen></iframe>
+
+One thing to note though is that Pacman fails to win on larger layouts because each board configuration is a separate state with separate q-values. He has no way to generalize that running into a ghost is bad for all positions. Hence, this approach will not scale. 
+
+The approach that is more scalable is approximate Q-learning. An approximate Q-learning agent learns weights of features of states where many states may share the same features. The agent assumes the existence of a feature function $f(s, a)$ over state and action pairs, which yields a vector $f_1(s, a) .. f_i(s, a) .. f_n(s, a)$ of feature values. 
+
+The approximate Q-function takes the following form
+
+$$Q(s, a) = \sum_{i=1}^n f_i(s, a) \cdot w_i$$
+
+where each weight $w_i$ is associated with a particular feature $f_i(s, a)$. The weight vectors are updated the same one updates q-values:
+
+$$difference = (r + \gamma \underset{a'}{\text{max}} Q(s', a')) - Q(s, a)$$
+$$w_i = w_i + \alpha \cdot difference \cdot f_i(s, a)$$ 
+
+## Conclusion
+
+To summarize, a value iteration agent is not a reinforcement learning agent. It takes an MDP on construction and computes the best action according to the value function. That is, it ponders its MDP model to arrive at a complete policy before ever interacting with a real environment. A Q-learning agent, on the other hand, interacts with the environment it's in learns by trial and error and computes values when necessary. 
