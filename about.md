@@ -4,12 +4,19 @@ title: About
 permalink: /about/
 ---
 
-I am currently senior majoring in Electrical Engineering and Computer Science at the University of California, Berkeley. 
+I am currently a senior majoring in Electrical Engineering and Computer Science at the University of California, Berkeley. 
 
-### More Information
+### Contact
 
-A place to include any other types of information that you'd like to include about yourself.
+<body>
+	<div class="imgContainer">
+		<a href="mailto:peijiesim@berkeley.edu"><img src="{{ site.baseurl }}/images/email-icon.png" width="40"></a>
+	</div>
+	<div class="imgContainer">
+		<a href="https://github.com/simpeijie"><img src="{{ site.baseurl }}/images/github-icon.png" width="40"></a>
+	</div>
+</body>
 
-### Contact me
 
-[peijiesim@berkeley.edu](mailto:email@domain.com)
+
+

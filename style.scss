@@ -109,6 +109,7 @@ strong, b {
 
 img {
   max-width: 100%;
+  -webkit-box-shadow: none;
 }
 
 // Fixes images in popup boxes from Google Translate
@@ -272,18 +273,15 @@ nav {
   }
 }
 
+.imgContainer {
+  display: inline-block;
+  padding: 0.1em 0.5em 0.1em 0.1em;
+}
 
 .center-image {
     margin: 0 auto;
     display: block;
   }
-
-.wrapper-footer {
-  margin-top: 50px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
-}
 
 footer {
   padding: 20px 0;

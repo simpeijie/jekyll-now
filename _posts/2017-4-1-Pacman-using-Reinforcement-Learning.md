@@ -23,8 +23,6 @@ MathJax.Hub.Queue(function() {
 
 This project uses techniques of reinforcement learning, specifically value iteration and Q-learning to play the classic game of Pacman. The agents designed are tested on a simulated robot controller (Crawler) and then on Pacman. The code for the project can be found [here](https://github.com/simpeijie/CS188-Artificial-Intelligence/tree/master/reinforcement).
 
-<!-- ![pacman_gridworld]({{ site.baseurl }}/images/pacman_gridworld.png) -->
-
 ## Background
 
 ### Markov Decision Process
@@ -119,7 +117,7 @@ The epsilon-greedy action selection is coded generically so that it works on gri
 ```
 python crawler.py
 ```
-<iframe width="540" height="315" class="center-image" src="http://www.youtube.com/embed/SROJrjSZg0Q" frameborder="0" allowfullscreen></iframe>
+<iframe width="540" height="315" class="center-image" src="http://www.youtube.com/embed/SROJrjSZg0Q" frameborder="0" allowfullscreen></iframe><b>
 
 The crawler starts off undecisive and wobbly but as it moves, it learns the best actions to progress after which it moves quicker and more steadily. The same applies to Pacman, who in the beginning of the game, perishes but later wins the game consistently. 
 
@@ -129,7 +127,7 @@ There are two phases in which Pacman will play this game. The first is training,
 python pacman.py -p PacmanQAgent -x 2000 -n 2010 -l smallGrid 
 ``` 
 
-<iframe width="540" height="315" class="center-image" src="http://www.youtube.com/embed/zmx-SJnsiQM" frameborder="0" allowfullscreen></iframe>
+<iframe width="540" height="315" class="center-image" src="http://www.youtube.com/embed/zmx-SJnsiQM" frameborder="0" allowfullscreen></iframe><b>
 
 One thing to note though is that Pacman fails to win on larger layouts because each board configuration is a separate state with separate q-values. He has no way to generalize that running into a ghost is bad for all positions. Hence, this approach will not scale. 
 

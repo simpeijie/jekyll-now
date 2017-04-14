@@ -18,10 +18,10 @@ avatar:
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email:
+  email: peijiesim@berkeley.edu
   facebook:
   flickr:
-  github: 
+  github: https://github.com/simpeijie
   instagram:
   linkedin:
   pinterest:
@@ -85,4 +85,4 @@ exclude:
   - README.md
   - CNAME
 
-theme: jekyll-theme-minimal
+theme: jekyll-theme-slate
