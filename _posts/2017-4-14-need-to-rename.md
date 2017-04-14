@@ -1,4 +1,4 @@
 ---
 layout: post
-title: Post #3
+title: Post 3
 ---
