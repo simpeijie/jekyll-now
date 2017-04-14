@@ -8,14 +8,14 @@ I am currently a senior majoring in Electrical Engineering and Computer Science 
 
 ### Contact
 
-<body>
+<div>
 	<div class="imgContainer">
-		<a href="mailto:peijiesim@berkeley.edu"><img src="{{ site.baseurl }}/images/email-icon.png" width="40"></a>
+		<a href="mailto:peijiesim@berkeley.edu"><img src="{{ site.baseurl }}/images/email-icon.png" width="33"></a>
 	</div>
 	<div class="imgContainer">
-		<a href="https://github.com/simpeijie"><img src="{{ site.baseurl }}/images/github-icon.png" width="40"></a>
+		<a href="https://github.com/simpeijie"><img src="{{ site.baseurl }}/images/github-icon.png" width="33"></a>
 	</div>
-</body>
+</div>
 
 
 
