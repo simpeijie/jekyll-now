@@ -21,7 +21,7 @@ MathJax.Hub.Queue(function() {
 </script>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-This project uses techniques of reinforcement learning, specifically value iteration and Q-learning to play the classic game of Pacman. The agents designed are tested on a simulated robot controller (Crawler) and then on Pacman. The code for the project can be found [here](https://github.com/simpeijie/CS188-Artificial-Intelligence/tree/master/reinforcement).
+This project uses techniques of reinforcement learning, specifically value iteration and Q-learning to play the classic game of Pacman. The agents designed are tested on a simulated robot controller (Crawler) and then on Pacman. The code for this project can be found [here](https://github.com/simpeijie/CS188-Artificial-Intelligence/tree/master/reinforcement).
 
 ## Background
 
