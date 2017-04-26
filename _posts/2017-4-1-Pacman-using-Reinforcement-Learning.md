@@ -2,25 +2,6 @@
 layout: post
 title: Pacman using Reinforcement Learning
 ---
-<style TYPE="text/css">
-code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
-</style>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['$','$'], ['\\(','\\)']],
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
-    }
-});
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i = 0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-});
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
 This project uses techniques of reinforcement learning, specifically value iteration and Q-learning to play the classic game of Pacman. The agents designed are tested on a simulated robot controller (Crawler) and then on Pacman. The code for this project can be found [here](https://github.com/simpeijie/CS188-Artificial-Intelligence/tree/master/reinforcement).
 
 ## Background
@@ -145,3 +126,22 @@ $$w_i = w_i + \alpha \cdot difference \cdot f_i(s, a)$$
 ## Conclusion
 
 To summarize, a value iteration agent is not a reinforcement learning agent. It takes an MDP on construction and computes the best action according to the value function. That is, it ponders its MDP model to arrive at a complete policy before ever interacting with a real environment. A Q-learning agent, on the other hand, interacts with the environment it's in learns by trial and error and computes values when necessary. 
+
+<style TYPE="text/css">
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+</style>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] // removed 'code' entry
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
