@@ -2,7 +2,7 @@
 layout: post
 title: Pacman-Multiagent
 ---
-In this project, I design agents (Pacman and ghosts) for the classic version of Pacman as well as implement both minimax with alpha-beta pruning and expectimax search. The point of this project is to get Pacman to reach his goals in scenarios where there are more than one adversary. The code is available [here](https://github.com/simpeijie/CS188-Artificial-Intelligence/tree/master/multiagent).
+In this project, I design agents (Pacman and ghosts) for the classic version of Pacman as well as implement both minimax with alpha-beta pruning and expectimax search. The point of this project is to get Pacman to reach his goals in scenarios where there are more than one adversary. The code is available [here](https://github.com/simpeijie/Artificial-Intelligence/tree/master/multiagent).
 
 ## Background
 
@@ -54,9 +54,11 @@ $$\forall \text{terminal states, } V(s) = \text{known}$$
 
 $p(s')$ refers to the probability that a given probabilistic action results in state $s'$, or the probability that an opponent chooses an action that results in $s'$.
 
-## Implementation
+<!-- ## Implementation
 
-When Pacman believes that his death is unavoidable, he will try to end the game as soon as possible because of the constant penalty for living. Sometimes, this is the wrong thing to do with random ghosts, but minimax agents always assume the worst:
+When Pacman believes that his death is unavoidable, he will try to end the game as soon as possible because of the constant penalty for living. Sometimes, this is the wrong thing to do with random ghosts, but minimax agents always assume the worst: -->
+
+
 
 <style TYPE="text/css">
 code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
