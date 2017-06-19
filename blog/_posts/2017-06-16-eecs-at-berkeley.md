@@ -7,9 +7,6 @@ category: blog
 
 UC Berkeley’s EECS (electrical engineering and computer science) program is renowned for its excellence and prestige, but at the same time notorious for the rigor of its coursework. The amount of work every technical class expects of students is unparalleled, so is the despair accompanying every exam. Being an EECS major is analogous to toiling for long hours in front of a computer, either cramming course materials or finishing up a programming assignment. If this all sounds intimidating, perhaps even scary; or for the adventurous - exciting, read on as I shed some light on what to expect pursuing one of the most rewarding majors in college.
 
-*Disclaimer: EECS students at UC Berkeley have the option, after finishing all the required lower division courses to freely choose from the plethora of upper division courses as they wish. There are essentially three paths one can venture from then, whether it be more EE-oriented, CS-oriented, or both. This post is composed by a former UC Berkeley EECS student who favored CS over the other two.*
-
- 
 Here are my five key takeaways: 
 
 **Be prepared to work your hearts out**
